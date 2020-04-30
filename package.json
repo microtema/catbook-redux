@@ -9,7 +9,9 @@
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -20,7 +22,8 @@
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "serve-favicon": "^2.3.0",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -62,5 +65,6 @@
     "webpack-hot-middleware": "2.10.0"
   },
   "author": "sophie debenedetto",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
